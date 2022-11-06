@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zuri/screens/onboarding/forgot_password.dart';
 import 'package:zuri/screens/onboarding/home.dart';
 import '../../../utilities/constants.dart';
 import '../../../utilities/dimensions.dart';
@@ -68,7 +69,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => const ForgotPasswordScreen());
+                        },
                         child: Text(
                           'Forgot Password?',
                           style: TextStyle(fontSize: Dimensions.height16),
