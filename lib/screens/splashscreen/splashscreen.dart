@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: AppColors.royalOrange,
       body: Center(
         child: Text(
-          'CITY MART',
+          'ZURI BOARD',
           style: TextStyle(
               fontWeight: FontWeight.bold, color: Colors.white, fontSize: 35),
         ),

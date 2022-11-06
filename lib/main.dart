@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zuri/screens/splashscreen/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Zuri Board',
       theme: ThemeData(
-       
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
       home: const SplashScreen(),
     );
   }
 }
-
