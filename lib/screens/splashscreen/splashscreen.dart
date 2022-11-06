@@ -1,9 +1,7 @@
-import 'package:citymartapp/screens/onboarding/onboarding.dart';
-import 'package:citymartapp/utilities/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../utilities/colors.dart';
+import '../onboarding/signup_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

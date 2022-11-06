@@ -6,6 +6,7 @@ import '../../utilities/constants.dart';
 import '../../utilities/dimensions.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_password_form.dart';
+import 'login.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -110,7 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: CustomButton(
                         title: 'Create Account',
                         ontap: () {
-                          Get.to(() => OtpVerificationScreen());
+                          // Get.to(() => OtpVerificationScreen());
                         }),
                   ),
                   Row(
