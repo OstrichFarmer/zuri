@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zuri/screens/onboarding/forgot_password.dart';
 import 'package:zuri/screens/onboarding/home.dart';
+import 'package:zuri/utilities/colors.dart';
 import '../../../utilities/constants.dart';
 import '../../../utilities/dimensions.dart';
 import '../../../widgets/custom_password_form.dart';
@@ -74,7 +75,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: Text(
                           'Forgot Password?',
-                          style: TextStyle(fontSize: Dimensions.height16),
+                          style: TextStyle(
+                              fontSize: Dimensions.height16,
+                              color: AppColors.royalOrange),
                         ),
                       ),
                     ),

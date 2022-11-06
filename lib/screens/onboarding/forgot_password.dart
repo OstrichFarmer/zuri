@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zuri/screens/onboarding/password_reset_success.dart';
+import 'package:zuri/utilities/dimensions.dart';
 import 'package:zuri/widgets/custom_button.dart';
 import 'package:zuri/widgets/custom_textfield.dart';
 
@@ -26,8 +27,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                 'FORGOT PASSWORD',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: Dimensions.height20,
               ),
               const Text(
                 'Please enter registered email address below to get a reset password email.',
@@ -38,8 +39,8 @@ class ForgotPasswordScreen extends StatelessWidget {
               ),
               CustomTextField(
                   hintText: 'Enter Email Address', onchanged: () {}),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: Dimensions.height30,
               ),
               CustomButton(
                   title: 'Send',
