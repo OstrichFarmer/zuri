@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigatetosplash() async {
     await Future.delayed(const Duration(seconds: 3), () {});
     if (!mounted) return;
-    Get.to(() => SignUpScreen());
+    Get.to(() => const SignUpScreen());
   }
 
   @override

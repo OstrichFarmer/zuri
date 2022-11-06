@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:zuri/screens/onboarding/home.dart';
 import '../../../utilities/constants.dart';
 import '../../../utilities/dimensions.dart';
 import '../../../widgets/custom_password_form.dart';
@@ -44,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: Dimensions.height15,
                     ),
-                    Text('Email'),
+                    const Text('Email'),
                     SizedBox(
                       height: Dimensions.height5,
                     ),
@@ -55,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: Dimensions.height25,
                     ),
-                    Text('Password'),
+                    const Text('Password'),
                     SizedBox(
                       height: Dimensions.height5,
                     ),
@@ -77,7 +79,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: Dimensions.height50,
                     ),
                     Center(
-                      child: CustomButton(title: 'Sign In', ontap: () {}),
+                      child: CustomButton(
+                          title: 'Sign In',
+                          ontap: () {
+                            Get.to(() => const HomeScreen());
+                          }),
                     ),
                   ],
                 ),

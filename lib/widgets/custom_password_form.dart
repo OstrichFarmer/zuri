@@ -5,6 +5,7 @@ import '../utilities/dimensions.dart';
 class CustomPasswordTextBox extends StatefulWidget {
   final Function(String) onchanged;
   final String hintText;
+  // ignore: use_key_in_widget_constructors
   const CustomPasswordTextBox(this.onchanged, this.hintText);
 
   @override
@@ -26,11 +27,11 @@ class _CustomPasswordTextBoxState extends State<CustomPasswordTextBox> {
         fillColor: Colors.white,
         suffixIcon: IconButton(
           icon: obscure
-              ? Icon(
+              ? const Icon(
                   Icons.visibility_off,
                   color: Colors.grey,
                 )
-              : Icon(
+              : const Icon(
                   Icons.visibility,
                   color: AppColors.royalOrange,
                 ),
@@ -47,7 +48,7 @@ class _CustomPasswordTextBoxState extends State<CustomPasswordTextBox> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(Dimensions.height10),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: AppColors.royalOrange,
           ),
         ),

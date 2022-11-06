@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zuri/screens/onboarding/home.dart';
 import '../../../widgets/custom_textfield.dart';
 import '../../utilities/colors.dart';
 import '../../utilities/constants.dart';
@@ -48,7 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     height: Dimensions.height15,
                   ),
-                  Text('Name'),
+                  const Text('Name'),
                   SizedBox(
                     height: Dimensions.height5,
                   ),
@@ -59,7 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     height: Dimensions.height25,
                   ),
-                  Text('Email'),
+                 const  Text('Email'),
                   SizedBox(
                     height: Dimensions.height5,
                   ),
@@ -70,7 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     height: Dimensions.height25,
                   ),
-                  Text('Phone'),
+                 const  Text('Phone'),
                   SizedBox(
                     height: Dimensions.height5,
                   ),
@@ -111,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: CustomButton(
                         title: 'Create Account',
                         ontap: () {
-                          // Get.to(() => OtpVerificationScreen());
+                          Get.to(() => const HomeScreen());
                         }),
                   ),
                   Row(
@@ -123,7 +124,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       TextButton(
                           onPressed: () {
-                            Get.to(() => LoginScreen());
+                            Get.to(() =>const  LoginScreen());
                           },
                           child: Text(
                             'Log in',
