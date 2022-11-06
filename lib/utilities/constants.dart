@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zuri/utilities/dimensions.dart';
 
 final kHeadingStyling = TextStyle(
   fontSize: Dimensions.height30,
