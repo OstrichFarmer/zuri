@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:zuri/screens/onboarding/password_reset_success.dart';
 import 'package:zuri/widgets/custom_button.dart';
 import 'package:zuri/widgets/custom_textfield.dart';
 
@@ -39,7 +41,11 @@ class ForgotPasswordScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              CustomButton(title: 'Send', ontap: () {})
+              CustomButton(
+                  title: 'Send',
+                  ontap: () {
+                    Get.to(() => const PasswordResetSuccessScreen());
+                  })
             ],
           ),
         ),
