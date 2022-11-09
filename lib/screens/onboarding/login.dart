@@ -1,8 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zuri/screens/onboarding/forgot_password.dart';
 import 'package:zuri/screens/onboarding/home.dart';
-import 'package:zuri/screens/onboarding/signup_screen.dart';
 import 'package:zuri/utilities/colors.dart';
 import '../../../utilities/constants.dart';
 import '../../../utilities/dimensions.dart';
@@ -20,6 +20,20 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  Future SignIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim());
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -115,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextButton(
                           onPressed: () {
-                            Get.to(() => const SignUpScreen());
+                            SignIn;
                           },
                           child: Text(
                             'Create account',
