@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:zuri/repository/exception/signup_with_email_and_password_error.dart';
 import 'package:zuri/screens/onboarding/home.dart';
@@ -14,16 +13,17 @@ class AuthenticationRepository extends GetxController {
 
   @override
   void onReady() {
+    Future.delayed(const Duration(seconds: 5));
     firebaseUser = Rx<User?>(_auth.currentUser);
     firebaseUser.bindStream(_auth.userChanges());
-    ever(firebaseUser, _setInitialScreen);
+    //ever(firebaseUser, _setInitialScreen);
   }
 
-  _setInitialScreen(User? user) {
-    user == null
-        ? Get.offAll(() => const SignUpScreen())
-        : Get.offAll(() => const HomeScreen());
-  }
+  // _setInitialScreen(User? user) {
+  //   user == null
+  //       ? Get.offAll(() => const SignUpScreen())
+  //       : Get.offAll(() => const HomeScreen());
+  // }
 
   Future<void> createUserWithEmailAndPassword(
       String email, String password) async {

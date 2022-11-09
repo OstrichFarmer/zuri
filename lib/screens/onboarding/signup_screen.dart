@@ -23,6 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
+    // ignore: no_leading_underscores_for_local_identifiers
     final _formkey = GlobalKey<FormState>();
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -123,6 +124,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: CustomButton(
                           title: 'Create Account',
                           ontap: () {
+                            if (_formkey.currentState!.validate()) {
+                              SignUpController.instance.createAccount(
+                                controller.email.text.trim(),
+                                controller.password.text.trim(),
+                              );
+                            }
                             Get.to(() => const HomeScreen());
                           }),
                     ),
@@ -135,13 +142,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         TextButton(
                             onPressed: () {
-                              if (_formkey.currentState!.validate()) {
-                                SignUpController.instance.createAccount(
-                                  controller.email.text.trim(),
-                                  controller.password.text.trim(),
-                                );
-                              }
-
                               Get.to(() => const LoginScreen());
                             },
                             child: Text(
