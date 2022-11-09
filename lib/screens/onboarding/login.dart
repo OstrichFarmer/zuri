@@ -7,6 +7,7 @@ import '../../../utilities/constants.dart';
 import '../../../utilities/dimensions.dart';
 import '../../../widgets/custom_password_form.dart';
 import '../../../widgets/custom_textfield.dart';
+import '../../controllers/login_controller.dart';
 import '../../widgets/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -19,6 +20,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+    final _formkey = GlobalKey<FormState>();
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: SafeArea(
@@ -52,6 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: Dimensions.height5,
                   ),
                   CustomTextField(
+                    controller: controller.email,
                     hintText: 'Enter email address ',
                     onchanged: () {},
                   ),
@@ -62,7 +66,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: Dimensions.height5,
                   ),
-                  CustomPasswordTextBox(onchanged: (_) {},hintText: 'Enter password', controller: ,),
+                  CustomPasswordTextBox(
+                    onchanged: (_) {},
+                    hintText: 'Enter password',
+                    controller: controller.password,
+                  ),
                   SizedBox(
                     height: Dimensions.height16,
                   ),
