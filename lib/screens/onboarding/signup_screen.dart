@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zuri/controllers/signup_controller.dart';
 import 'package:zuri/screens/onboarding/home.dart';
 import '../../../widgets/custom_textfield.dart';
 import '../../utilities/colors.dart';
@@ -21,6 +22,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignUpController());
+    final _formkey = GlobalKey<FormState>();
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: SafeArea(
@@ -32,107 +35,123 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Dimensions.height60,
                   Dimensions.height16,
                   Dimensions.height20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Create Account',
-                    style: kHeadingStyling,
-                  ),
-                  SizedBox(
-                    height: Dimensions.height10,
-                  ),
-                  Text(
-                    'Sign up to get started',
-                    style: kHeading2styling,
-                  ),
-                  SizedBox(
-                    height: Dimensions.height15,
-                  ),
-                  const Text('Name'),
-                  SizedBox(
-                    height: Dimensions.height5,
-                  ),
-                  CustomTextField(
-                    hintText: 'Enter name ',
-                    onchanged: () {},
-                  ),
-                  SizedBox(
-                    height: Dimensions.height25,
-                  ),
-                 const  Text('Email'),
-                  SizedBox(
-                    height: Dimensions.height5,
-                  ),
-                  CustomTextField(
-                    hintText: 'Enter email address ',
-                    onchanged: () {},
-                  ),
-                  SizedBox(
-                    height: Dimensions.height25,
-                  ),
-                 const  Text('Phone'),
-                  SizedBox(
-                    height: Dimensions.height5,
-                  ),
-                  CustomTextField(
-                    hintText: 'Enter phone number ',
-                    onchanged: () {},
-                  ),
-                  SizedBox(
-                    height: Dimensions.height25,
-                  ),
-                  CustomPasswordTextBox((_) {}, 'Enter password'),
-                  SizedBox(
-                    height: Dimensions.height16,
-                  ),
-                  Row(
-                    children: [
-                      Checkbox(
-                        activeColor: AppColors.royalOrange,
-                        value: isChecked,
-                        onChanged: (value) {
-                          setState(() {
-                            isChecked = value!;
-                          });
-                        },
-                      ),
-                      Text(
-                        'Remember me',
-                        style: TextStyle(
-                            fontSize: Dimensions.font16,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: Dimensions.height20 * 2,
-                  ),
-                  Center(
-                    child: CustomButton(
-                        title: 'Create Account',
-                        ontap: () {
-                          Get.to(() => const HomeScreen());
-                        }),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Already have an account?',
-                        style: kHeading2styling,
-                      ),
-                      TextButton(
-                          onPressed: () {
-                            Get.to(() =>const  LoginScreen());
+              child: Form(
+                key: _formkey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Create Account',
+                      style: kHeadingStyling,
+                    ),
+                    SizedBox(
+                      height: Dimensions.height10,
+                    ),
+                    Text(
+                      'Sign up to get started',
+                      style: kHeading2styling,
+                    ),
+                    SizedBox(
+                      height: Dimensions.height15,
+                    ),
+                    const Text('Name'),
+                    SizedBox(
+                      height: Dimensions.height5,
+                    ),
+                    CustomTextField(
+                      controller: controller.fullname,
+                      hintText: 'Enter name ',
+                      onchanged: () {},
+                    ),
+                    SizedBox(
+                      height: Dimensions.height25,
+                    ),
+                    const Text('Email'),
+                    SizedBox(
+                      height: Dimensions.height5,
+                    ),
+                    CustomTextField(
+                      controller: controller.email,
+                      hintText: 'Enter email address ',
+                      onchanged: () {},
+                    ),
+                    SizedBox(
+                      height: Dimensions.height25,
+                    ),
+                    const Text('Phone'),
+                    SizedBox(
+                      height: Dimensions.height5,
+                    ),
+                    CustomTextField(
+                      controller: controller.phone,
+                      hintText: 'Enter phone number ',
+                      onchanged: () {},
+                    ),
+                    SizedBox(
+                      height: Dimensions.height25,
+                    ),
+                    CustomPasswordTextBox(
+                        onchanged: (_) {},
+                        hintText: 'Enter password',
+                        controller: controller.password),
+                    SizedBox(
+                      height: Dimensions.height16,
+                    ),
+                    Row(
+                      children: [
+                        Checkbox(
+                          activeColor: AppColors.royalOrange,
+                          value: isChecked,
+                          onChanged: (value) {
+                            setState(() {
+                              isChecked = value!;
+                            });
                           },
-                          child: Text(
-                            'Log in',
-                            style: kHeading2styling,
-                          ))
-                    ],
-                  )
-                ],
+                        ),
+                        Text(
+                          'Remember me',
+                          style: TextStyle(
+                              fontSize: Dimensions.font16,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Dimensions.height20 * 2,
+                    ),
+                    Center(
+                      child: CustomButton(
+                          title: 'Create Account',
+                          ontap: () {
+                            Get.to(() => const HomeScreen());
+                          }),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Already have an account?',
+                          style: kHeading2styling,
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              if (_formkey.currentState!.validate()) {
+                                SignUpController.instance.createAccount(
+                                  controller.email.text.trim(),
+                                  controller.password.text.trim(),
+                                );
+                              }
+
+                              Get.to(() => const LoginScreen());
+                            },
+                            child: Text(
+                              'Log in',
+                              style: kHeading2styling,
+                            ))
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),

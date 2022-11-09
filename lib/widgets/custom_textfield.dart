@@ -5,16 +5,19 @@ import '../utilities/dimensions.dart';
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final Function onchanged;
+  final TextEditingController controller;
   // ignore: use_key_in_widget_constructors
   const CustomTextField({
     Key? key,
     required this.hintText,
     required this.onchanged,
+    required this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       onChanged: onchanged(),
       decoration: InputDecoration(
         filled: true,

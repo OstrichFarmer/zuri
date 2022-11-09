@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: Dimensions.height5,
                   ),
-                  CustomPasswordTextBox((_) {}, 'Enter password'),
+                  CustomPasswordTextBox(onchanged: (_) {},hintText: 'Enter password', controller: ,),
                   SizedBox(
                     height: Dimensions.height16,
                   ),
