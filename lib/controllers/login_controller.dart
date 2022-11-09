@@ -11,7 +11,7 @@ class LoginController extends GetxController {
 
   //function
 
-  void createAccount(
+  void login(
     String email,
     dynamic password,
   ) {}
