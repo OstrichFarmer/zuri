@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "749896607424",
+    "project_id": "zuri-app-66212",
+    "storage_bucket": "zuri-app-66212.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749896607424:android:de8bc291873cfb3c94af25",
+        "android_client_info": {
+          "package_name": "com.example.zuri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749896607424-1lh52udoild1hc2ge9rvientagsro938.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXQtiltOcHl-5xKHWLSQL92mQI7_xSEz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749896607424-1lh52udoild1hc2ge9rvientagsro938.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

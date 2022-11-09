@@ -18,6 +18,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -53,6 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: Dimensions.height5,
                   ),
                   CustomTextField(
+                    controller: _emailController,
                     hintText: 'Enter email address ',
                     onchanged: () {},
                   ),
@@ -64,6 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: Dimensions.height5,
                   ),
                   CustomPasswordTextBox(
+                    controller: _passwordController,
                     onchanged: (_) {},
                     hintText: 'Enter password',
                   ),

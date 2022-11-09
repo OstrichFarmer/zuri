@@ -5,13 +5,13 @@ import '../utilities/dimensions.dart';
 class CustomPasswordTextBox extends StatefulWidget {
   final Function(String) onchanged;
   final String hintText;
-  //final TextEditingController controller;
+  final TextEditingController controller;
 
-  // ignore: use_key_in_widget_constructors
+  //ignore: use_key_in_widget_constructors
   const CustomPasswordTextBox({
     required this.onchanged,
     required this.hintText,
-    // required this.controller,
+    required this.controller,
   });
 
   @override
@@ -24,7 +24,7 @@ class _CustomPasswordTextBoxState extends State<CustomPasswordTextBox> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      //  controller: widget.controller,
+      controller: widget.controller,
       enableSuggestions: false,
       autocorrect: false,
       obscureText: obscure ? true : false,

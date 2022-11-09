@@ -11,6 +11,8 @@ class ForgotPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _emailController = TextEditingController();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -39,7 +41,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 height: 25,
               ),
               CustomTextField(
-                
+                  controller: _emailController,
                   hintText: 'Enter Email Address',
                   onchanged: () {}),
               SizedBox(

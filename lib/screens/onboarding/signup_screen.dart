@@ -18,6 +18,8 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   bool isChecked = false;
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +63,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: Dimensions.height5,
                     ),
                     CustomTextField(
+                      controller: _emailController,
                       hintText: 'Enter email address ',
                       onchanged: () {},
                     ),
@@ -72,6 +75,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: Dimensions.height25,
                     ),
                     CustomPasswordTextBox(
+                      controller: _passwordController,
                       onchanged: (_) {},
                       hintText: 'Enter password',
                     ),
