@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:zuri/controllers/login_controller.dart';
+
 import 'package:zuri/screens/onboarding/password_reset_success.dart';
 import 'package:zuri/utilities/dimensions.dart';
 import 'package:zuri/widgets/custom_button.dart';
@@ -11,7 +11,6 @@ class ForgotPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -40,7 +39,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 height: 25,
               ),
               CustomTextField(
-                  controller: controller.email,
+                
                   hintText: 'Enter Email Address',
                   onchanged: () {}),
               SizedBox(

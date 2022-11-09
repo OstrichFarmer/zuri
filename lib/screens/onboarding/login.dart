@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zuri/screens/onboarding/forgot_password.dart';
 import 'package:zuri/screens/onboarding/home.dart';
+import 'package:zuri/screens/onboarding/signup_screen.dart';
 import 'package:zuri/utilities/colors.dart';
 import '../../../utilities/constants.dart';
 import '../../../utilities/dimensions.dart';
 import '../../../widgets/custom_password_form.dart';
 import '../../../widgets/custom_textfield.dart';
-import '../../controllers/login_controller.dart';
 import '../../widgets/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,8 +20,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
-    final _formkey = GlobalKey<FormState>();
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: SafeArea(
@@ -55,7 +53,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: Dimensions.height5,
                   ),
                   CustomTextField(
-                    controller: controller.email,
                     hintText: 'Enter email address ',
                     onchanged: () {},
                   ),
@@ -69,7 +66,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomPasswordTextBox(
                     onchanged: (_) {},
                     hintText: 'Enter password',
-                    controller: controller.password,
                   ),
                   SizedBox(
                     height: Dimensions.height16,
@@ -91,12 +87,39 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: Dimensions.height50,
                   ),
+                  SizedBox(
+                    height: Dimensions.height10,
+                  ),
                   Center(
                     child: CustomButton(
                         title: 'Sign In',
                         ontap: () {
                           Get.to(() => const HomeScreen());
                         }),
+                  ),
+                  SizedBox(
+                    height: Dimensions.height30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Dont have an account?',
+                        style: TextStyle(
+                            fontSize: Dimensions.height16,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      TextButton(
+                          onPressed: () {
+                            Get.to(() => const SignUpScreen());
+                          },
+                          child: Text(
+                            'Create account',
+                            style: TextStyle(
+                                fontSize: Dimensions.height16,
+                                color: AppColors.royalOrange),
+                          )),
+                    ],
                   ),
                 ],
               ),

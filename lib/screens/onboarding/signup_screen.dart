@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:zuri/controllers/signup_controller.dart';
 import 'package:zuri/screens/onboarding/home.dart';
 import '../../../widgets/custom_textfield.dart';
 import '../../utilities/colors.dart';
@@ -22,9 +21,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(SignUpController());
-    // ignore: no_leading_underscores_for_local_identifiers
-    final _formkey = GlobalKey<FormState>();
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: SafeArea(
@@ -37,7 +33,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Dimensions.height16,
                   Dimensions.height20),
               child: Form(
-                key: _formkey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -55,14 +50,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     SizedBox(
                       height: Dimensions.height15,
                     ),
-                    const Text('Name'),
                     SizedBox(
                       height: Dimensions.height5,
-                    ),
-                    CustomTextField(
-                      controller: controller.fullname,
-                      hintText: 'Enter name ',
-                      onchanged: () {},
                     ),
                     SizedBox(
                       height: Dimensions.height25,
@@ -72,7 +61,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: Dimensions.height5,
                     ),
                     CustomTextField(
-                      controller: controller.email,
                       hintText: 'Enter email address ',
                       onchanged: () {},
                     ),
@@ -81,20 +69,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     const Text('Phone'),
                     SizedBox(
-                      height: Dimensions.height5,
-                    ),
-                    CustomTextField(
-                      controller: controller.phone,
-                      hintText: 'Enter phone number ',
-                      onchanged: () {},
-                    ),
-                    SizedBox(
                       height: Dimensions.height25,
                     ),
                     CustomPasswordTextBox(
-                        onchanged: (_) {},
-                        hintText: 'Enter password',
-                        controller: controller.password),
+                      onchanged: (_) {},
+                      hintText: 'Enter password',
+                    ),
                     SizedBox(
                       height: Dimensions.height16,
                     ),
@@ -124,12 +104,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: CustomButton(
                           title: 'Create Account',
                           ontap: () {
-                            if (_formkey.currentState!.validate()) {
-                              SignUpController.instance.createAccount(
-                                controller.email.text.trim(),
-                                controller.password.text.trim(),
-                              );
-                            }
                             Get.to(() => const HomeScreen());
                           }),
                     ),
