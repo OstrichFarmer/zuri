@@ -12,5 +12,8 @@ class SignUpController extends GetxController {
 
   //function
 
-  void createAccount(String email, dynamic password,  ) {}
+  void createAccount(
+    String email,
+    String password,
+  ) {}
 }

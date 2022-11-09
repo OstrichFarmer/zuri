@@ -13,6 +13,6 @@ class LoginController extends GetxController {
 
   void login(
     String email,
-    dynamic password,
+    String password,
   ) {}
 }
