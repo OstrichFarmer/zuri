@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "749896607424",
-    "project_id": "zuri-app-66212",
-    "storage_bucket": "zuri-app-66212.appspot.com"
+    "project_number": "801572528034",
+    "project_id": "zuri-9dcfc",
+    "storage_bucket": "zuri-9dcfc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:749896607424:android:de8bc291873cfb3c94af25",
+        "mobilesdk_app_id": "1:801572528034:android:088cac0719ac28bd875cfb",
         "android_client_info": {
           "package_name": "com.example.zuri"
         }
       },
       "oauth_client": [
         {
-          "client_id": "749896607424-1lh52udoild1hc2ge9rvientagsro938.apps.googleusercontent.com",
+          "client_id": "801572528034-hq5q78qbsh1giquq6m5bjrjr90ejmk2c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCXQtiltOcHl-5xKHWLSQL92mQI7_xSEz4"
+          "current_key": "AIzaSyCl_vWhJ7iKK4LEgGuRu1bOYwYBIoyVQSU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "749896607424-1lh52udoild1hc2ge9rvientagsro938.apps.googleusercontent.com",
+              "client_id": "801572528034-hq5q78qbsh1giquq6m5bjrjr90ejmk2c.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

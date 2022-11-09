@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zuri/screens/onboarding/forgot_password.dart';
 import 'package:zuri/screens/onboarding/home.dart';
+import 'package:zuri/screens/onboarding/signup_screen.dart';
 import 'package:zuri/utilities/colors.dart';
 import '../../../utilities/constants.dart';
 import '../../../utilities/dimensions.dart';
@@ -21,10 +22,15 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  Future SignIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim());
+  Future signIn() async {
+    await FirebaseAuth.instance
+        .signInWithEmailAndPassword(
+            email: _emailController.text, password: _passwordController.text)
+        .then((value) {
+      Get.snackbar('Login in successful', 'Going to homescreen',
+          isDismissible: true, snackPosition: SnackPosition.BOTTOM);
+      Get.to(() => const HomeScreen());
+    });
   }
 
   @override
@@ -112,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: CustomButton(
                         title: 'Sign In',
                         ontap: () {
-                          Get.to(() => const HomeScreen());
+                          signIn();
                         }),
                   ),
                   SizedBox(
@@ -129,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextButton(
                           onPressed: () {
-                            SignIn;
+                            Get.to(() => const SignUpScreen());
                           },
                           child: Text(
                             'Create account',

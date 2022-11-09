@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zuri/screens/onboarding/home.dart';
@@ -108,7 +109,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: CustomButton(
                           title: 'Create Account',
                           ontap: () {
-                            Get.to(() => const HomeScreen());
+                            FirebaseAuth.instance
+                                .createUserWithEmailAndPassword(
+                                    email: _emailController.text,
+                                    password: _passwordController.text)
+                                .then((value) {
+                              print('Account created successfully');
+                              Get.snackbar('Account Created',
+                                  'You have created an account successfully');
+                              Get.to(() => const HomeScreen());
+                            }).onError((error, stackTrace) {
+                              print('Error ${error.toString()}');
+                            });
                           }),
                     ),
                     Row(

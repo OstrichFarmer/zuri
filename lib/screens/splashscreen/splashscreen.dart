@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zuri/screens/main_page.dart';
+import 'package:zuri/screens/onboarding/login.dart';
+import 'package:zuri/screens/onboarding/signup_screen.dart';
 import '../../utilities/colors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigatetosplash() async {
     await Future.delayed(const Duration(seconds: 3), () {});
     if (!mounted) return;
-    Get.to(() => const MainPage());
+    Get.to(() => const LoginScreen());
   }
 
   @override

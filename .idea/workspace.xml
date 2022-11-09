@@ -6,6 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="c4773e77-5e0d-420c-8ab1-a83e7416f395" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/firebase_app_id_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/firebase_app_id_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/onboarding/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/onboarding/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/onboarding/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/onboarding/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/onboarding/signup_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/onboarding/signup_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/splashscreen/splashscreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/splashscreen/splashscreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/firebase_app_id_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/macos/firebase_app_id_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

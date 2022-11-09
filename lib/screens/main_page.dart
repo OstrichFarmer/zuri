@@ -13,6 +13,7 @@ class MainPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
+            print(snapshot.data);
             return const HomeScreen();
           } else {
             return const LoginScreen();

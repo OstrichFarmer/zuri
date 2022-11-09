@@ -1,14 +1,47 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:zuri/screens/onboarding/login.dart';
 import 'package:zuri/utilities/colors.dart';
 import '../../utilities/dimensions.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  Future<void> signOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Container(),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: ElevatedButton(
+                onPressed: () {
+                  signOut();
+                  Get.snackbar(
+                    'Logging out',
+                    'Log out Successful',
+                    isDismissible: true,
+                    snackPosition: SnackPosition.BOTTOM,
+                  );
+                  Get.to(() => const LoginScreen());
+                },
+                child: const Text(
+                  'Sign Out',
+                  style: TextStyle(fontSize: 16),
+                )),
+          )
+        ],
         backgroundColor: AppColors.royalOrange,
         toolbarHeight: 80,
         title: const Text('HOME SCREEN'),
