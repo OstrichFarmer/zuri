@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "496367480697",
-    "project_id": "zuri-app-c7b7e",
-    "storage_bucket": "zuri-app-c7b7e.appspot.com"
+    "project_number": "1013095085044",
+    "project_id": "zuri-app-ac760",
+    "storage_bucket": "zuri-app-ac760.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:496367480697:android:5c41066092ab7892e3c9a8",
+        "mobilesdk_app_id": "1:1013095085044:android:c2b583039e593f58e0ffa1",
         "android_client_info": {
           "package_name": "com.example.zuri"
         }
       },
       "oauth_client": [
         {
-          "client_id": "496367480697-i605gtg7iujgg3rbvfvc2sr3qs9771ot.apps.googleusercontent.com",
+          "client_id": "1013095085044-slsnad3f99ga9m0buutqn4me7vpt8ehg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA_YJgRA8ASCz3mCZHLuJunWBPbmgAKeXQ"
+          "current_key": "AIzaSyCY1M2BvfL92Ar6LA8etf3fJZUBeAv5YLo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "496367480697-i605gtg7iujgg3rbvfvc2sr3qs9771ot.apps.googleusercontent.com",
+              "client_id": "1013095085044-slsnad3f99ga9m0buutqn4me7vpt8ehg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
