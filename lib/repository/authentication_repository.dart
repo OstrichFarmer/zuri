@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
+import 'package:zuri/repository/exception/signup_with_email_and_password_error.dart';
 import 'package:zuri/screens/onboarding/home.dart';
 import 'package:zuri/screens/onboarding/signup_screen.dart';
 
@@ -29,8 +30,18 @@ class AuthenticationRepository extends GetxController {
     try {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
+      firebaseUser.value != null
+          ? Get.offAll(() => const HomeScreen())
+          : Get.offAll(() => const SignUpScreen());
     } on FirebaseAuthException catch (e) {
-    } catch (_) {}
+      final ex = SignupWithEmailAndPasswordFailure.code(e.code);
+      print('FIREBASE AUTH EXCEPTION -${ex.message}');
+      throw ex;
+    } catch (_) {
+      const ex = SignupWithEmailAndPasswordFailure();
+      print('FIREBASE AUTH EXCEPTION -${ex.message}');
+      throw ex;
+    }
   }
 
   Future<void> loginUserWithEmailAndPassword(
@@ -41,5 +52,5 @@ class AuthenticationRepository extends GetxController {
     } catch (_) {}
   }
 
-  Future<void> SignOut() async => _auth.signOut();
+  Future<void> logOut() async => _auth.signOut();
 }
