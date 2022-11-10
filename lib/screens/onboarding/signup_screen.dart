@@ -116,15 +116,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 .then((value) {
                               print('Account created successfully');
                               Get.snackbar(
-                                  'Account Created',
-                                  snackPosition: SnackPosition.BOTTOM,
-                                  colorText: AppColors.royalOrange,
-                                  padding: const EdgeInsets.all(10),
-                                  margin: const EdgeInsets.all(10),
-                                  'You have created an account successfully');
+                                'Account Created',
+                                'You have created an account successfully',
+                                snackPosition: SnackPosition.BOTTOM,
+                                colorText: AppColors.royalOrange,
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.all(10),
+                              );
                               Get.to(() => const HomeScreen());
                             }).onError((error, stackTrace) {
-                              print('Error ${error.toString()}');
+                              Get.snackbar(
+                                'Error',
+                                error.toString(),
+                                snackPosition: SnackPosition.TOP,
+                                colorText: AppColors.royalOrange,
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.all(10),
+                              );
                             });
                           }),
                     ),
