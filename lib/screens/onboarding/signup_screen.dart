@@ -118,6 +118,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Get.snackbar(
                                   'Account Created',
                                   snackPosition: SnackPosition.BOTTOM,
+                                  colorText: AppColors.royalOrange,
+                                  padding: const EdgeInsets.all(10),
+                                  margin: const EdgeInsets.all(10),
                                   'You have created an account successfully');
                               Get.to(() => const HomeScreen());
                             }).onError((error, stackTrace) {

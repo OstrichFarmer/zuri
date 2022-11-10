@@ -23,14 +23,26 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
 
   Future signIn() async {
-    await FirebaseAuth.instance
-        .signInWithEmailAndPassword(
-            email: _emailController.text, password: _passwordController.text)
-        .then((value) {
-      Get.snackbar('Login in successful', 'Going to homescreen',
-          isDismissible: true, snackPosition: SnackPosition.BOTTOM);
-      Get.to(() => const HomeScreen());
-    });
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+              email: _emailController.text, password: _passwordController.text)
+          .then((value) {
+        Get.snackbar('Login in successful', 'Going to homescreen',
+            colorText: AppColors.royalOrange,
+            isDismissible: true,
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            snackPosition: SnackPosition.BOTTOM);
+        Get.to(() => const HomeScreen());
+      });
+    } catch (e) {
+      Get.snackbar('Error', e.toString(),
+          snackPosition: SnackPosition.TOP,
+          colorText: AppColors.royalOrange,
+          padding: const EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10));
+    }
   }
 
   @override
