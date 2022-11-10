@@ -49,8 +49,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   Get.snackbar(
                     'Logging out',
                     'Log out Successful',
+                    colorText: AppColors.royalOrange,
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
                     isDismissible: true,
-                    snackPosition: SnackPosition.BOTTOM,
+                    snackPosition: SnackPosition.TOP,
                   );
                   Get.to(() => const LoginScreen());
                 },
