@@ -115,7 +115,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     password: _passwordController.text)
                                 .then((value) {
                               print('Account created successfully');
-                              Get.snackbar('Account Created',
+                              Get.snackbar(
+                                  'Account Created',
+                                  snackPosition: SnackPosition.BOTTOM,
                                   'You have created an account successfully');
                               Get.to(() => const HomeScreen());
                             }).onError((error, stackTrace) {
