@@ -114,7 +114,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     email: _emailController.text,
                                     password: _passwordController.text)
                                 .then((value) {
-                              print('Account created successfully');
+                             
                               Get.snackbar(
                                 'Account Created',
                                 'You have created an account successfully',

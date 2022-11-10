@@ -11,6 +11,7 @@ class ForgotPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: no_leading_underscores_for_local_identifiers
     final _emailController = TextEditingController();
 
     return GestureDetector(

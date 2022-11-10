@@ -19,7 +19,7 @@ class Database {
         return docs;
       }
     } catch (e) {
-      print(e);
+      //print(e);
     }
     return null;
   }
