@@ -13,11 +13,7 @@ class Database {
       querySnapshot = await firestore.collection('products').get();
       if (querySnapshot.docs.isNotEmpty) {
         for (var doc in querySnapshot.docs.toList()) {
-          Map a = {
-            "id": doc.id,
-            "name": doc['name'],
-            "price": ['price']
-          };
+          Map a = {"id": doc.id, "name": doc['name'], "price": doc['price']};
           docs.add(a);
         }
         return docs;
